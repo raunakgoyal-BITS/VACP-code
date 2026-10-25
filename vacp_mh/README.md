@@ -1,20 +1,20 @@
-# VACP-MH
+# Code
 
-Volatility-aware, delay-aware online conformal calibration of multi-horizon prediction
+Volatility- and delay-aware online conformal calibration of multi-horizon prediction
 intervals. This folder holds the code behind the Neurocomputing manuscript. The tables and figures it
 writes are in `../paper/tables` and `../paper/figs`.
 Every number in the paper comes from the pipeline below.
 
 In the manuscript and in every generated table and figure, the method is
-called "Proposed" (set by `PROPOSED` in `experiments/analyze.py`). The package and class
-names (`vacp_mh`, `VACP_MH`) are unchanged. `report.py` renames the old label "VACP-MH"
-when it reads `analysis.pkl` files written before this change, so these do not need to be
-rebuilt.
+called "Proposed" (set by `PROPOSED` in `experiments/analyze.py`); the Python package is
+`vacp_mh`. The saved `analysis.pkl` files use the earlier label "VACP-MH"; `report.py`
+renames it when it loads them.
 
 ## Layout
 ```
 vacp_mh/                 library
   backbone.py            two-layer LSTM; Student-t / Gaussian NLL or pinball (QR) heads
+  models.py, losses.py   network module and loss functions used by backbone.py
   conformal.py           OnlineConformal (PI quantile tracking, ACI), SplitConformal, rollout
                          with h-step delayed feedback
   garch.py               GARCH(1,1)-t baseline
@@ -57,12 +57,6 @@ validation split. The test split is used only for the final evaluation.
 - Beijing Multi-Site Air-Quality data (Zhang et al., 2017), UCI Machine Learning Repository,
   station Aotizhongxin, via `build_airquality.py`. Set `SRC` in that script to the
   downloaded CSV. The resulting `air_quality.csv` is included (CC BY 4.0).
-
-## Legacy files
-`run_demo.py`, `run_nifty_experiment.py`, `run_airquality_experiment.py`, `models.py`,
-`losses.py`, `vacp.py`, `baselines.py`, `metrics.py`, `plots.py` and the `results*/` and
-`figures*/` folders belong to the first draft. They are kept for reference only and are
-**not** used for any number in the paper.
 
 ## Licence
 The code is released under the MIT licence; see `../LICENSE`.

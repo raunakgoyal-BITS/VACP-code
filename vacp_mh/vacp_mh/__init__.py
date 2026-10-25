@@ -1,6 +1,4 @@
-"""VACP-MH: Volatility-Aware Conformalised Prediction for Multi-Horizon intervals."""
-from . import data, metrics, conformal, losses, models, vacp, baselines, stats  # noqa: F401
-from .vacp import VACP_MH  # noqa: F401
+"""Volatility- and delay-aware online conformal calibration of multi-horizon prediction intervals."""
+from . import data, conformal, losses, models, backbone, stats  # noqa: F401
 
-__all__ = ["data", "metrics", "conformal", "losses", "models", "vacp",
-           "baselines", "stats", "VACP_MH"]
+__all__ = ["data", "conformal", "losses", "models", "backbone", "stats"]

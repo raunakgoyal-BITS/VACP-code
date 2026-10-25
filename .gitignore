@@ -12,3 +12,11 @@ __pycache__/
 *.fdb_latexmk
 # backups
 *.bak
+# local-only files (not published)
+/paper/main.tex
+/paper/main.pdf
+/submission/
+/CODE_GUIDE.md
+/.agents/
+/vacp_mh/market_data.csv
+/vacp_mh/outputs/logs/
