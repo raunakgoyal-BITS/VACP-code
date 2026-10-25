@@ -1,0 +1,9 @@
+# Versions used for every result in the paper (Python 3.9.6, Apple M3 Pro CPU)
+numpy==2.0.2
+scipy==1.13.1
+pandas==2.3.3
+torch==2.8.0
+statsmodels==0.14.6   # ADF, ARCH-LM and Ljung-Box diagnostics
+pyyaml==6.0.3         # experiment configs
+matplotlib==3.9.4     # figures
+yfinance==1.2.0       # only for build_dataset.py (NIFTY 50 data)

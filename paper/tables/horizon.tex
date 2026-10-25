@@ -1,0 +1,34 @@
+\begin{table*}[!t]\centering\caption{Coverage and relIS by horizon at 90\%.}\label{tab:horizon}
+\scriptsize\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{lcccccccccc}\toprule
+\multicolumn{11}{c}{NIFTY 50}\\
+Method & \multicolumn{2}{c}{$h=1$} & \multicolumn{2}{c}{$h=3$} & \multicolumn{2}{c}{$h=5$} & \multicolumn{2}{c}{$h=10$} & \multicolumn{2}{c}{$h=20$}\\
+ & PICP & relIS & PICP & relIS & PICP & relIS & PICP & relIS & PICP & relIS\\\midrule
+Naive-Vol & \textcolor{gray}{0.876} & 1.000 & \textcolor{gray}{0.857} & 1.000 & \textcolor{gray}{0.844} & 1.000 & \textcolor{gray}{0.857} & 1.000 & 0.882 & 1.000\\
+GARCH-t & \textcolor{gray}{0.921} & 0.967 & 0.920 & 0.958 & 0.906 & 0.954 & \textcolor{gray}{0.937} & \textbf{0.956} & \textcolor{gray}{0.947} & \underline{0.994}\\
+Prob-LSTM & \textcolor{gray}{0.950} & 1.035 & \textcolor{gray}{0.963} & 1.039 & \textcolor{gray}{0.966} & 1.046 & \textcolor{gray}{0.976} & 1.069 & \textcolor{gray}{0.980} & 1.058\\
+QR-LSTM & \textcolor{gray}{0.945} & 0.979 & \textcolor{gray}{0.932} & \underline{0.957} & 0.911 & \underline{0.946} & \textcolor{gray}{0.939} & 1.022 & \textcolor{gray}{0.946} & 1.028\\
+CQR & 0.906 & \textbf{0.932} & 0.913 & \textbf{0.939} & 0.909 & \textbf{0.936} & \textcolor{gray}{0.943} & 1.027 & \textcolor{gray}{0.948} & 1.039\\
+Split-CP & \textcolor{gray}{0.953} & 1.051 & \textcolor{gray}{0.962} & 1.069 & \textcolor{gray}{0.950} & 1.020 & \textcolor{gray}{0.977} & 1.100 & \textcolor{gray}{0.967} & 1.024\\
+LW-CP & \textcolor{gray}{0.932} & 0.986 & \textcolor{gray}{0.951} & 0.995 & \textcolor{gray}{0.938} & 0.971 & \textcolor{gray}{0.969} & 1.023 & \textcolor{gray}{0.953} & \textbf{0.974}\\
+ACI & 0.910 & 1.002 & 0.908 & 1.027 & 0.906 & 1.018 & 0.908 & 1.034 & 0.920 & 1.004\\
+CP-PID & 0.908 & 0.983 & 0.910 & 1.013 & 0.908 & 1.024 & 0.911 & 1.036 & 0.909 & 1.138\\
+Proposed & 0.911 & \underline{0.962} & 0.917 & 0.968 & 0.915 & 0.967 & \textcolor{gray}{0.941} & \underline{0.982} & \textcolor{gray}{0.933} & 1.039\\
+\bottomrule\end{tabular}\\[4pt]
+\begin{tabular}{lcccccccccc}\toprule
+\multicolumn{11}{c}{PM2.5}\\
+Method & \multicolumn{2}{c}{$h=1$} & \multicolumn{2}{c}{$h=3$} & \multicolumn{2}{c}{$h=6$} & \multicolumn{2}{c}{$h=12$} & \multicolumn{2}{c}{$h=24$}\\
+ & PICP & relIS & PICP & relIS & PICP & relIS & PICP & relIS & PICP & relIS\\\midrule
+Naive-Vol & 0.907 & 1.000 & 0.896 & 1.000 & 0.881 & 1.000 & \textcolor{gray}{0.869} & 1.000 & \textcolor{gray}{0.862} & 1.000\\
+GARCH-t & \textcolor{gray}{0.810} & 0.906 & \textcolor{gray}{0.782} & 1.892 & \textcolor{gray}{0.754} & 15.716 & \textcolor{gray}{0.743} & 959.566 & \textcolor{gray}{0.731} & $3.0{\times}10^{5}$\\
+Prob-LSTM & \textcolor{gray}{0.870} & \textbf{0.756} & 0.885 & 0.747 & \textcolor{gray}{0.875} & 0.680 & \textcolor{gray}{0.867} & 0.558 & \textcolor{gray}{0.854} & 0.234\\
+QR-LSTM & 0.885 & 0.779 & 0.885 & \underline{0.705} & \textcolor{gray}{0.871} & \textbf{0.562} & \textcolor{gray}{0.860} & \textbf{0.366} & \textcolor{gray}{0.833} & \textbf{0.147}\\
+CQR & 0.892 & 0.781 & 0.899 & \textbf{0.702} & 0.901 & \underline{0.565} & 0.907 & \underline{0.379} & 0.897 & \underline{0.153}\\
+Split-CP & 0.895 & 0.994 & 0.898 & 0.859 & 0.889 & 0.736 & 0.894 & 0.532 & 0.884 & 0.224\\
+LW-CP & 0.891 & \underline{0.762} & 0.904 & 0.763 & 0.900 & 0.721 & 0.904 & 0.682 & 0.900 & 0.314\\
+ACI & 0.900 & 0.923 & 0.900 & 0.881 & 0.900 & 0.832 & 0.899 & 0.769 & 0.899 & 0.311\\
+CP-PID & 0.900 & 0.944 & 0.899 & 0.860 & 0.897 & 0.783 & 0.894 & 0.649 & 0.892 & 0.277\\
+Proposed & 0.900 & 0.765 & 0.900 & 0.768 & 0.896 & 0.732 & 0.894 & 0.725 & 0.892 & 0.321\\
+\bottomrule\end{tabular}\\[4pt]
+\parbox{\linewidth}{\scriptsize Mean over five seeds. Best relIS per column in bold, second best underlined, ranked on unrounded values; PICP outside $[0.88,0.92]$ in grey.}
+\end{table*}

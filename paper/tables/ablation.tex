@@ -1,0 +1,17 @@
+\begin{table*}[!t]\centering\caption{Component ablation.}\label{tab:ablation}
+\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabular}{lccccccccccccc}\toprule
+ & \multicolumn{7}{c}{Components} & \multicolumn{3}{c}{NIFTY~50} & \multicolumn{3}{c}{Beijing PM2.5}\\
+\cmidrule(lr){2-8}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+Variant & Norm. & Online & Int. & $h$-scale & Floor & t-NLL & Log & CovDev & relIS & WRD & CovDev & relIS & WRD\\\midrule
+Proposed (full) & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & 0.027 & 0.985 & 0.054 & 0.004 & 0.671 & 0.021\\
+w/o normalisation & \xmark & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & 0.032 & 1.024 & 0.059 & 0.004 & 0.703 & 0.033\\
+w/o online update & \cmark & \xmark & \xmark & \xmark & \cmark & \cmark & \cmark & 0.053 & 0.990 & 0.079 & 0.007 & 0.663 & 0.025\\
+w/o integral term & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark & \cmark & 0.031 & \underline{0.983} & 0.058 & 0.004 & 0.669 & 0.020\\
+PI $\rightarrow$ ACI & \cmark & \cmark & -- & -- & \cmark & \cmark & \cmark & \textbf{0.012} & \textbf{0.973} & \underline{0.047} & \textbf{0.001} & $1.6{\times}10^{4}$ & 0.026\\
+w/o horizon gain scaling & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark & \underline{0.013} & 0.994 & \textbf{0.044} & 0.002 & 0.913 & 0.034\\
+w/o $\sigma$ floor & \cmark & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & 0.026 & 0.983 & 0.053 & 0.004 & 0.672 & 0.022\\
+Gaussian likelihood & \cmark & \cmark & \cmark & \cmark & \cmark & \xmark & \cmark & 0.025 & 0.988 & 0.053 & 0.003 & \underline{0.649} & \underline{0.018}\\
+Level target & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \xmark & 0.088 & 26.147 & 0.150 & \underline{0.001} & \textbf{0.552} & \textbf{0.016}\\
+\bottomrule\end{tabular}
+\par\smallskip\parbox{\linewidth}{\scriptsize Each variant makes one change to the proposed method; every other setting is fixed to the validation-selected configuration. Columns are averaged over all horizons, levels and five seeds. Norm.: dispersion-normalised score; Online: online update; Int.: integral term; $h$-scale: horizon gain scaling; Floor: $\sigma$ floor; t-NLL: Student-$t$ likelihood; Log: log-increment target. Best in bold, second underlined, ranked on unrounded values. Because these averages include the 80\% and 95\% levels, the full-model values differ slightly from the 90\% values in Table~\ref{tab:main}.}
+\end{table*}

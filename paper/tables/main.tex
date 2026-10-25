@@ -1,0 +1,27 @@
+\begin{table*}[!t]\centering
+\caption{Main comparison at the 90\% level.}\label{tab:main}
+\scriptsize\setlength{\tabcolsep}{2.6pt}\resizebox{\textwidth}{!}{\begin{tabular}{llcccccccccc}\toprule
+ & & \multicolumn{5}{c}{NIFTY~50} & \multicolumn{5}{c}{Beijing PM2.5}\\
+\cmidrule(lr){3-7}\cmidrule(lr){8-12}
+Group & Method & PICP$_{h=1}$ & IS$_{h=1}$ & $\overline{\mathrm{CovDev}}$ & $\overline{\mathrm{relIS}}$ & WRD & PICP$_{h=1}$ & IS$_{h=1}$ & $\overline{\mathrm{CovDev}}$ & $\overline{\mathrm{relIS}}$ & WRD\\\midrule
+Heuristic & Naive-Vol & 0.876 {\tiny[0.85,0.90]} & 805 {\tiny[676,978]} & 0.037 & 1.000 & 0.085 & 0.907 {\tiny[0.89,0.92]} & 102 {\tiny[88,118]} & 0.020 & 1.000 & 0.128\\
+ & GARCH-t & 0.921 {\tiny[0.90,0.94]} & 778 {\tiny[665,933]} & 0.026 & \textbf{0.966} & 0.056 & 0.810 {\tiny[0.80,0.82]} & 92.5 {\tiny[78.4,111.7]} & 0.136 & $5.9{\times}10^{4}$ & 0.235\\
+\addlinespace[1pt]
+Probabilistic & Prob-LSTM & 0.950 {\tiny[0.93,0.97]} & 833 {\tiny[747,960]} & 0.067{\tiny$\pm$0.013} & 1.049{\tiny$\pm$0.026} & 0.084 & 0.870 {\tiny[0.86,0.88]} & \textbf{77.2} {\tiny[67.7,87.7]} & 0.030{\tiny$\pm$0.010} & 0.595{\tiny$\pm$0.030} & 0.045\\
+\addlinespace[1pt]
+Quantile regression & QR-LSTM & 0.945 {\tiny[0.92,0.96]} & 788 {\tiny[693,930]} & 0.037{\tiny$\pm$0.015} & 0.986{\tiny$\pm$0.036} & 0.067 & 0.885 {\tiny[0.87,0.90]} & 79.6 {\tiny[70.0,90.3]} & 0.033{\tiny$\pm$0.016} & \textbf{0.512}{\tiny$\pm$0.008} & 0.055\\
+ & CQR & \textbf{0.906} {\tiny[0.88,0.92]} & \textbf{750} {\tiny[647,906]} & 0.028{\tiny$\pm$0.006} & \underline{0.975}{\tiny$\pm$0.021} & 0.059 & 0.892 {\tiny[0.88,0.90]} & 79.8 {\tiny[70.2,90.3]} & 0.005{\tiny$\pm$0.001} & \underline{0.516}{\tiny$\pm$0.012} & 0.026\\
+\addlinespace[1pt]
+Static conformal & Split-CP & 0.953 {\tiny[0.93,0.97]} & 846 {\tiny[752,987]} & 0.062{\tiny$\pm$0.002} & 1.053{\tiny$\pm$0.021} & 0.083 & 0.895 {\tiny[0.88,0.91]} & 101 {\tiny[89,115]} & 0.008{\tiny$\pm$0.003} & 0.669{\tiny$\pm$0.006} & 0.040\\
+ & LW-CP & 0.932 {\tiny[0.90,0.95]} & 794 {\tiny[698,937]} & 0.049{\tiny$\pm$0.007} & 0.990{\tiny$\pm$0.018} & 0.075 & 0.891 {\tiny[0.88,0.90]} & \underline{77.9} {\tiny[68.3,88.1]} & 0.005{\tiny$\pm$0.001} & 0.648{\tiny$\pm$0.054} & \textbf{0.021}\\
+\addlinespace[1pt]
+Online conformal & ACI & 0.910 {\tiny[0.88,0.94]} & 806 {\tiny[693,978]} & \underline{0.010}{\tiny$\pm$0.003} & 1.017{\tiny$\pm$0.018} & \underline{0.052} & 0.900 {\tiny[0.89,0.91]} & 94.3 {\tiny[82.0,107.8]} & \textbf{0.001}{\tiny$\pm$0.000} & 0.743{\tiny$\pm$0.026} & 0.033\\
+ & CP-PID & \underline{0.908} {\tiny[0.88,0.93]} & 791 {\tiny[678,958]} & \textbf{0.010}{\tiny$\pm$0.005} & 1.039{\tiny$\pm$0.052} & \textbf{0.038} & \textbf{0.900} {\tiny[0.89,0.91]} & 96.4 {\tiny[84.3,109.7]} & \underline{0.003}{\tiny$\pm$0.002} & 0.702{\tiny$\pm$0.025} & 0.032\\
+\addlinespace[1pt]
+Interval learning & DeepPIPE-P & 0.000 {\tiny[0.00,0.00]} & $2.5{\times}10^{5}$ & -- & -- & -- & 0.833 {\tiny[0.81,0.86]} & 92.1 {\tiny[75.5,111.1]} & -- & -- & --\\
+ & DeepPIPE-R & 0.794 {\tiny[0.74,0.83]} & 880 {\tiny[715,1105]} & -- & -- & -- & 0.704 {\tiny[0.68,0.73]} & 86.5 {\tiny[75.8,98.6]} & -- & -- & --\\
+\addlinespace[1pt]
+This work & Proposed & 0.911 {\tiny[0.88,0.93]} & \underline{774} {\tiny[668,933]} & 0.024{\tiny$\pm$0.014} & 0.984{\tiny$\pm$0.028} & 0.054 & \underline{0.900} {\tiny[0.89,0.91]} & 78.2 {\tiny[68.8,88.6]} & 0.004{\tiny$\pm$0.001} & 0.663{\tiny$\pm$0.047} & \underline{0.022}\\
+\bottomrule\end{tabular}}
+\par\smallskip\parbox{\linewidth}{\scriptsize PICP and IS at $h=1$ are seed-averaged, with 95\% moving-block bootstrap CIs in brackets. $\overline{\mathrm{CovDev}}$ and $\overline{\mathrm{relIS}}$ are averaged over all horizons (relIS: interval score relative to Naive-Vol, lower is better) and shown as mean $\pm$ 95\% CI half-width over five seeds. WRD: worst-regime coverage deviation averaged over horizons. Best in bold, second best underlined, ranked on unrounded values. DeepPIPE is a single-horizon, single-level method.}
+\end{table*}

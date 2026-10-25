@@ -1,0 +1,14 @@
+\begin{table}[!t]\centering\caption{Computational cost.}\label{tab:runtime}
+\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabular}{lcccc}\toprule
+Component & \multicolumn{2}{c}{NIFTY~50} & \multicolumn{2}{c}{PM2.5}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Params & Time & Params & Time\\\midrule
+LSTM backbone, training (s) & 54,154 & 42 & 54,922 & 166\\
+QR-LSTM, training (s) & 56,429 & 25 & 57,197 & 179\\
+DeepPIPE, training (s) & 53,699 & 160 & 54,467 & 619\\
+Backbone inference (ms / origin) &  & 0.219 &  & 0.229\\
+Proposed calibrator ($\mu$s / step) & 0 & 5.7 & 0 & 5.0\\
+Validation tuning of calibrators (s) &  & 7 &  & 54\\
+GARCH(1,1)-t fit (s) & 5 & 0.6 & 5 & 12.8\\
+\bottomrule\end{tabular}
+\par\smallskip\parbox{\linewidth}{\scriptsize Apple M3 Pro CPU, two threads per run; mean over seeds. Calibration cost is per forecast origin, horizon and level.}
+\end{table}

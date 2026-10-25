@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+# Python
+__pycache__/
+*.pyc
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+# backups
+*.bak

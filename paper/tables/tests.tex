@@ -1,0 +1,38 @@
+\begin{table*}[!t]\centering\caption{Statistical tests at the 90\% level.}\label{tab:tests}
+\scriptsize\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{lcccccccc}\toprule
+ & \multicolumn{5}{c}{DM vs proposed, NIFTY 50} & \multicolumn{3}{c}{Backtests, $h=1$}\\
+\cmidrule(lr){2-6}\cmidrule(lr){7-9}
+Method & $h=1$ & $h=3$ & $h=5$ & $h=10$ & $h=20$ & UC & IND & CC\\\midrule
+Naive-Vol & $-1.27$ & $-0.98$ & $-0.88$ & $-0.29$ & $+0.39$ & 0.049 & 0.760 & 0.134\\
+GARCH-t & $-0.20$ & $+0.39$ & $+0.48$ & $+0.85$ & $+1.36$ & 0.063 & 0.973 & 0.181\\
+Prob-LSTM & $-5.06^{***}$ & $-3.88^{***}$ & $-3.28^{***}$ & $-4.90^{***}$ & $-0.50$ & 0.000 & 0.153 & 0.000\\
+QR-LSTM & $-0.79$ & $+0.54$ & $+0.78$ & $-1.06$ & $+0.14$ & 0.000 & 0.395 & 0.000\\
+CQR & $+1.45$ & $+1.48$ & $+1.10$ & $-1.24$ & $+0.00$ & 0.045 & 0.514 & 0.112\\
+Split-CP & $-6.38^{***}$ & $-5.06^{***}$ & $-2.31$ & $-5.52^{***}$ & $+0.41$ & 0.000 & 0.083 & 0.000\\
+LW-CP & $-2.85^{**}$ & $-2.26$ & $-0.40$ & $-2.94^{**}$ & $+2.19$ & 0.004 & 0.446 & 0.008\\
+ACI & $-4.68^{***}$ & $-3.29^{***}$ & $-2.20$ & $-1.73$ & $+1.24$ & 0.375 & 0.333 & 0.443\\
+CP-PID & $-2.70^{**}$ & $-3.81^{***}$ & $-3.91^{***}$ & $-2.34$ & $-2.60^{*}$ & 0.453 & 0.223 & 0.362\\
+DeepPIPE-P & $-105.48^{***}$ & -- & -- & -- & -- & 0.000 & 1.000 & 0.000\\
+DeepPIPE-R & $-3.30^{***}$ & -- & -- & -- & -- & 0.000 & 0.053 & 0.000\\
+Proposed & -- & -- & -- & -- & -- & 0.453 & 0.434 & 0.561\\
+\bottomrule\end{tabular}\\[4pt]
+\begin{tabular}{lcccccccc}\toprule
+ & \multicolumn{5}{c}{DM vs proposed, PM2.5} & \multicolumn{3}{c}{Backtests, $h=1$}\\
+\cmidrule(lr){2-6}\cmidrule(lr){7-9}
+Method & $h=1$ & $h=3$ & $h=6$ & $h=12$ & $h=24$ & UC & IND & CC\\\midrule
+Naive-Vol & $-17.10^{***}$ & $-10.36^{***}$ & $-6.54^{***}$ & $-2.74^{**}$ & $-2.24^{*}$ & 0.083 & 0.000 & 0.000\\
+GARCH-t & $-4.12^{***}$ & $-1.44$ & $-1.05$ & $-1.00$ & $-1.00$ & 0.000 & 0.204 & 0.000\\
+Prob-LSTM & $+1.71$ & $+3.75^{***}$ & $+5.09^{***}$ & $+7.15^{***}$ & $+5.40^{***}$ & 0.000 & 0.000 & 0.000\\
+QR-LSTM & $-1.67$ & $+3.80^{***}$ & $+8.38^{***}$ & $+9.50^{***}$ & $+7.73^{***}$ & 0.002 & 0.000 & 0.000\\
+CQR & $-1.84$ & $+4.15^{***}$ & $+9.24^{***}$ & $+9.68^{***}$ & $+7.90^{***}$ & 0.136 & 0.000 & 0.000\\
+Split-CP & $-18.70^{***}$ & $-8.90^{***}$ & $-0.41$ & $+6.29^{***}$ & $+4.80^{***}$ & 0.321 & 0.000 & 0.000\\
+LW-CP & $+0.79$ & $+1.50$ & $+1.54$ & $+2.20^{*}$ & $+0.51$ & 0.008 & 0.000 & 0.000\\
+ACI & $-11.97^{***}$ & $-9.08^{***}$ & $-7.47^{***}$ & $-1.43$ & $+0.62$ & 0.916 & 0.000 & 0.000\\
+CP-PID & $-19.19^{***}$ & $-8.99^{***}$ & $-4.98^{***}$ & $+2.84^{**}$ & $+2.56^{*}$ & 0.974 & 0.000 & 0.000\\
+DeepPIPE-P & $-6.09^{***}$ & -- & -- & -- & -- & 0.000 & 0.000 & 0.000\\
+DeepPIPE-R & $-5.78^{***}$ & -- & -- & -- & -- & 0.000 & 0.000 & 0.000\\
+Proposed & -- & -- & -- & -- & -- & 0.938 & 0.000 & 0.000\\
+\bottomrule\end{tabular}\\[4pt]
+\parbox{\linewidth}{\scriptsize Left: Diebold--Mariano statistics on the interval-score loss of the proposed method minus the baseline (negative values favour the proposed method), HAC lag $h-1$ with the Harvey correction; $^{*}$, $^{**}$, $^{***}$: Holm-adjusted $p<0.10, 0.05, 0.01$ across the baselines of each column. Right: $p$-values at $h=1$ of Kupiec's unconditional coverage (UC), Christoffersen's independence (IND) and conditional coverage (CC) tests (median over seeds; $p<0.05$ rejects calibration).}
+\end{table*}

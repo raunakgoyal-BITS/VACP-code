@@ -1,0 +1,29 @@
+== width-vs-scale correlation (h=1, level 0.90): adaptivity ==
+  corr(width, scale)  VACP-MH                = +0.022
+  corr(width, scale)  Ablate:StaticSplit     = -0.299
+  corr(width, scale)  Ablate:PlainACI        = -0.121
+  corr(width, scale)  Naive-Vol              = +0.232
+  corr(width, scale)  DeepPIPE(single)       = -0.492
+  corr(width, scale)  DeepPIPE(two-phase)    = -0.482
+
+== Interval-score DM test vs VACP-MH (h=1, level 0.90) ==
+  VACP-MH vs StaticSplit  DM=+23.83 p=0.0000 (baseline better)
+  VACP-MH vs PlainACI     DM=+20.87 p=0.0000 (baseline better)
+  VACP-MH vs Naive-Vol    DM=+14.03 p=0.0000 (baseline better)
+
+  VACP-MH interval-score mean=138.1 95%CI=[119.2,158.2]
+
+== Regime-conditional coverage @90% (calm / mid / turbulent thirds by scale) ==
+   target = 0.900; deviation from 0.900 in the turbulent third is the key number
+   method              calm         mid   turbulent   turb|dev|
+   VACP-MH            0.901       0.902       0.897       0.003
+   StaticSplit        0.950       0.899       0.822       0.078
+   PlainACI           0.942       0.894       0.857       0.043
+   Naive-Vol          0.918       0.921       0.897       0.003
+
+== Regime-conditional mean width @90% ==
+   method              calm         mid   turbulent
+   VACP-MH            107.9        91.3       118.4
+   StaticSplit         72.5        51.3        37.3
+   PlainACI            82.0        59.7        57.6
+   Naive-Vol           65.4        80.6        96.0

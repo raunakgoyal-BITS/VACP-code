@@ -1,0 +1,17 @@
+# Beijing PM2.5, Aotizhongxin station, hourly, 2013-03-01 .. 2017-02-28
+name: pm25
+csv: air_quality.csv
+target: Close                 # PM2.5 + 1 (strictly positive)
+scale_signal: rv48            # trailing 48-h realised volatility of log-increments
+horizons: [1, 3, 6, 12, 24]
+levels: [0.80, 0.90, 0.95]
+seq_len: 48
+lookback_grid: [24, 48, 96]
+start_index: 95
+split: {train: 0.70, val: 0.15}
+feature_groups: [own, poll, met]
+feature_ablation: [[own], [own, poll], [own, poll, met]]
+backbone: {hidden: 64, layers: 2, dropout: 0.1, lr: 0.001, batch: 128, epochs: 40, patience: 6, weight_decay: 0.01, df: 4.0}
+deeppipe: {epochs: 60, warmup: 20, batch: 128, beta: 0.5, lam: 15.0}
+bootstrap_block: 48
+seeds: [0, 1, 2, 3, 4]

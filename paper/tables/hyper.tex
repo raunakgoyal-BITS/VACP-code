@@ -1,0 +1,18 @@
+\begin{table}[!t]\centering\caption{Hyperparameters.}\label{tab:hyper}
+\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabular}{@{}p{2.5cm}p{2.9cm}p{2.9cm}@{}}\toprule
+Setting & NIFTY~50 & PM2.5\\\midrule
+Look-back $L$ & 60 & 48\\
+LSTM layers / hidden & 2 / 64 & 2 / 64\\
+Dropout / weight decay & 0.1 / 0.01 & 0.1 / 0.01\\
+Batch / max epochs / patience & 32 / 60 / 8 & 128 / 40 / 6\\
+Learning rate (AdamW) & 0.001 & 0.001\\
+Student-$t$ d.o.f. $\nu$ & 4.0 & 4.0\\
+$\sigma$ floor quantile & 0.10 & 0.10\\
+Proposed gains & $\eta$=0.01, $\kappa$=1.0, $k_I$=0.02 (1/5) & $\eta$=0.05, $\kappa$=0.5, $k_I$=0.0 (2/5)\\
+CP-PID gains & $\eta$=0.05, $\kappa$=0.0, $k_I$=0.02 (2/5) & $\eta$=0.1, $\kappa$=0.5, $k_I$=0.01 (1/5)\\
+ACI gains & $\gamma$=0.01, $\kappa$=0.0 (2/5) & $\gamma$=0.05, $\kappa$=1.0 (5/5)\\
+Bootstrap block length & 20 & 48\\
+Seeds & 0, 1, 2, 3, 4 & 0, 1, 2, 3, 4\\
+\bottomrule\end{tabular}
+\par\smallskip\parbox{\linewidth}{\scriptsize Calibrator gains were selected on the second half of the validation stream (grid in the text). The most frequent choice over seeds is shown with its count.}
+\end{table}

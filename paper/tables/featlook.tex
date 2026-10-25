@@ -1,0 +1,19 @@
+\begin{table}[!t]\centering\caption{Input-feature and look-back ablations.}\label{tab:featlook}
+\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabular}{llccc}\toprule
+Data & Variant & CovDev & relIS & WRD\\\midrule
+NIFTY 50 & own history & 0.033 & 1.021 & 0.058\\
+ & + India VIX & \underline{0.027} & \textbf{0.984} & \underline{0.053}\\
+ & + global markets (full) & 0.027 & \underline{0.985} & 0.054\\
+ & look-back $L=20$ & 0.030 & 0.985 & 0.055\\
+ & look-back $L=60$ (default) & 0.027 & 0.985 & 0.054\\
+ & look-back $L=120$ & \textbf{0.022} & 0.996 & \textbf{0.047}\\
+\midrule
+PM2.5 & own history & \underline{0.003} & \textbf{0.645} & 0.024\\
+ & + co-pollutants & 0.004 & \underline{0.658} & 0.021\\
+ & + meteorology, calendar (full) & 0.004 & 0.671 & 0.021\\
+ & look-back $L=24$ & 0.004 & 0.693 & \underline{0.020}\\
+ & look-back $L=48$ (default) & 0.004 & 0.671 & 0.021\\
+ & look-back $L=96$ & \textbf{0.003} & 0.658 & \textbf{0.019}\\
+\bottomrule\end{tabular}
+\par\smallskip\parbox{\linewidth}{\scriptsize The calibrator of the proposed method is re-tuned on validation for each backbone. Averages over all horizons, levels and seeds. Best in bold, second underlined, ranked on unrounded values.}
+\end{table}

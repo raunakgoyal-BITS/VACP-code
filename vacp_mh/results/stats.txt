@@ -1,0 +1,14 @@
+== VIX-width correlation (h=1, level 0.90): adaptivity ==
+  corr(width, VIX)  VACP-MH                = +0.250
+  corr(width, VIX)  Ablate:StaticSplit     = +0.118
+  corr(width, VIX)  Ablate:PlainACI        = +0.468
+  corr(width, VIX)  Naive-Vol              = +0.485
+  corr(width, VIX)  DeepPIPE(single)       = -0.286
+  corr(width, VIX)  DeepPIPE(two-phase)    = +0.410
+
+== Interval-score DM test vs VACP-MH (h=1, level 0.90) ==
+  VACP-MH vs StaticSplit  DM=+2.25 p=0.0250 (baseline better)
+  VACP-MH vs PlainACI     DM=+6.67 p=0.0000 (baseline better)
+  VACP-MH vs Naive-Vol    DM=+6.89 p=0.0000 (baseline better)
+
+  VACP-MH interval-score mean=932.3 95%CI=[810.4,1096.8]

@@ -1,0 +1,24 @@
+\begin{table}[!t]\centering\caption{Regime-conditional coverage at $h=1$ (90\%).}\label{tab:regime}
+\scriptsize\setlength{\tabcolsep}{2pt}\begin{tabular}{lccc}\toprule
+Method & Calm & Moderate & Turbulent\\\midrule
+\multicolumn{4}{l}{\textit{NIFTY 50}}\\
+Naive-Vol & \textbf{0.882} {\tiny[0.84,0.91]} & 0.868 {\tiny[0.81,0.92]} & 0.877 {\tiny[0.83,0.92]}\\
+GARCH-t & 0.939 {\tiny[0.90,0.97]} & \underline{0.910} {\tiny[0.87,0.95]} & 0.915 {\tiny[0.88,0.95]}\\
+QR-LSTM & 0.973 {\tiny[0.96,0.98]} & 0.936 {\tiny[0.90,0.96]} & 0.925 {\tiny[0.89,0.95]}\\
+CQR & 0.937 {\tiny[0.91,0.96]} & \textbf{0.894} {\tiny[0.85,0.93]} & \textbf{0.887} {\tiny[0.85,0.92]}\\
+LW-CP & 0.977 {\tiny[0.95,0.99]} & 0.941 {\tiny[0.90,0.97]} & 0.878 {\tiny[0.84,0.92]}\\
+ACI & 0.958 {\tiny[0.92,0.98]} & 0.916 {\tiny[0.86,0.95]} & 0.858 {\tiny[0.81,0.90]}\\
+CP-PID & \underline{0.926} {\tiny[0.88,0.96]} & 0.913 {\tiny[0.87,0.95]} & \underline{0.886} {\tiny[0.84,0.93]}\\
+Proposed & 0.938 {\tiny[0.90,0.97]} & 0.913 {\tiny[0.86,0.95]} & 0.881 {\tiny[0.84,0.92]}\\
+\multicolumn{4}{l}{\textit{PM2.5}}\\
+Naive-Vol & 0.880 {\tiny[0.86,0.90]} & 0.910 {\tiny[0.89,0.93]} & 0.931 {\tiny[0.92,0.95]}\\
+GARCH-t & 0.777 {\tiny[0.76,0.79]} & 0.831 {\tiny[0.82,0.84]} & 0.823 {\tiny[0.81,0.83]}\\
+QR-LSTM & 0.913 {\tiny[0.90,0.93]} & 0.885 {\tiny[0.87,0.90]} & 0.855 {\tiny[0.83,0.88]}\\
+CQR & 0.921 {\tiny[0.90,0.93]} & 0.894 {\tiny[0.88,0.91]} & 0.863 {\tiny[0.84,0.88]}\\
+LW-CP & \underline{0.906} {\tiny[0.89,0.92]} & 0.890 {\tiny[0.87,0.91]} & 0.876 {\tiny[0.86,0.89]}\\
+ACI & 0.882 {\tiny[0.86,0.90]} & \underline{0.895} {\tiny[0.88,0.91]} & 0.924 {\tiny[0.91,0.93]}\\
+CP-PID & 0.912 {\tiny[0.89,0.93]} & 0.893 {\tiny[0.87,0.91]} & \underline{0.894} {\tiny[0.87,0.91]}\\
+Proposed & \textbf{0.897} {\tiny[0.88,0.91]} & \textbf{0.899} {\tiny[0.88,0.91]} & \textbf{0.904} {\tiny[0.89,0.92]}\\
+\bottomrule\end{tabular}
+\par\smallskip\parbox{\linewidth}{\scriptsize Regimes are terciles of the scale signal at the forecast origin. Brackets: 95\% block-bootstrap CI. Bold: closest to 0.90; underlined: second closest, ranked on unrounded values.}
+\end{table}
