@@ -82,12 +82,12 @@ def run_seed(args):
     ref = ref_naive(ctx, cfg, vT)
     res = {"methods": {}, "abl": {}, "sens": {}, "tuned": {}, "traces": {}, "meta": meta}
     t = time.perf_counter()
-    vacp_cfg, rows_v = M.tune(vT, H, L, M.GRID_PI, ref, dict(M.VACP_DEFAULT))
+    vacp_cfg, rows_v = M.tune(vT, H, L, M.GRID_PI, ref, dict(M.PROPOSED_DEFAULT))
     pid_cfg, rows_p = M.tune(vT, H, L, M.GRID_PI, ref, dict(method="pi", normalized=False))
     aci_cfg, rows_a = M.tune(vT, H, L, M.GRID_ACI, ref, dict(method="aci", normalized=False))
     res["tuned"] = dict(vacp=vacp_cfg, cp_pid=pid_cfg, aci=aci_cfg, tune_seconds=time.perf_counter() - t,
                         grid_vacp=rows_v)
-    VK = {**M.VACP_DEFAULT, **vacp_cfg}
+    VK = {**M.PROPOSED_DEFAULT, **vacp_cfg}
     m = res["methods"]
     t = time.perf_counter()
     m[PROPOSED], tr = M.conformal_method(vT, eT, H, L, track=True, **VK)
@@ -130,8 +130,8 @@ def run_seed(args):
         keys = sorted({k.split("/")[0] for k in zp})
         for k in keys:
             v, e = streams_from(z, zp, k)
-            c, _ = M.tune(v, H, L, M.GRID_PI, ref, dict(M.VACP_DEFAULT))
-            dst[k] = M.conformal_method(v, e, H, L, **{**M.VACP_DEFAULT, **c})
+            c, _ = M.tune(v, H, L, M.GRID_PI, ref, dict(M.PROPOSED_DEFAULT))
+            dst[k] = M.conformal_method(v, e, H, L, **{**M.PROPOSED_DEFAULT, **c})
         res["meta"].update({f"{part}:{k}": vv for k, vv in mp.items()})
     res["mech"] = dict(m=eT.m[:, 0], sigma=eT.sigma[:, 0], y=eT.y[:, 0])
     return res

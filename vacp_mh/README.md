@@ -7,8 +7,8 @@ Every number in the paper comes from the pipeline below.
 
 In the manuscript and in every generated table and figure, the method is
 called "Proposed" (set by `PROPOSED` in `experiments/analyze.py`); the Python package is
-`vacp_mh`. The saved `analysis.pkl` files use the earlier label "VACP-MH"; `report.py`
-renames it when it loads them.
+`vacp_mh`. The saved outputs (`analysis.pkl` and the CSV tables in `outputs/`) use the earlier label
+"VACP-MH"; `report.py` renames it when it loads them.
 
 ## Layout
 ```

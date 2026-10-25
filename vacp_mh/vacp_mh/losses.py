@@ -1,4 +1,4 @@
-"""Training objectives for the VACP-MH backbone (torch)."""
+"""Training objectives for the backbone of the proposed method (torch)."""
 from __future__ import annotations
 import math
 import torch
@@ -22,7 +22,7 @@ def student_t_nll(mu, log_scale, target, df=4.0):
     """Negative log-likelihood of a Student-t (heavy tails) per horizon.
 
     mu, log_scale, target : (B, H). df = degrees of freedom (smaller = heavier tails).
-    This trains the conditional dispersion head sigma_hat = exp(log_scale) that VACP-MH
+    This trains the conditional dispersion head sigma_hat = exp(log_scale) that the proposed method
     uses to normalise conformal scores (volatility-aware width).
     """
     scale = torch.exp(log_scale).clamp_min(1e-6)

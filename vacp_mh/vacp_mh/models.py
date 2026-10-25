@@ -5,7 +5,7 @@ Encoder-decoder-free, single LSTM encoder with per-horizon heads:
   * log_scale head-> conditional dispersion sigma_hat_{t,h} (drives volatility-aware width)
   * quantile head -> optional direct quantiles (for CQR-style baselines / WIS)
 
-Deliberately architecture-light: the contribution of VACP-MH is the calibration
+Deliberately architecture-light: the contribution of the proposed method is the calibration
 mechanism, not the backbone. Any point/probabilistic forecaster can be swapped in.
 """
 from __future__ import annotations

@@ -3,7 +3,7 @@
 Reproduces the encoder-decoder LSTM with three heads (point, lower, upper via softplus
 offsets) and the hybrid loss L = beta*MAE + MPIW + lambda*(max(0, alpha - PICP))^2.
 Supports single-phase (original) and two-phase (paper's fix) training so we can benchmark
-VACP-MH against BOTH the collapse and the paper's proposed remedy.
+the proposed method against BOTH the collapse and the paper's proposed remedy.
 
 Operates in PRICE space (as in the reference paper), which is exactly the setting where the
 level-OOD problem appears -- this is intentional, so the comparison is faithful.

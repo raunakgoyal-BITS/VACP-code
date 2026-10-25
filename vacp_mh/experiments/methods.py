@@ -18,7 +18,7 @@ GRID_PI = [dict(eta=e, ki=k, kappa=c) for e, k, c in
            itertools.product([0.005, 0.01, 0.02, 0.05, 0.1], [0.0, 0.005, 0.01, 0.02], [0.0, 0.5, 1.0])]
 GRID_ACI = [dict(gamma=g, kappa=c) for g, c in
             itertools.product([0.001, 0.002, 0.005, 0.01, 0.02, 0.05], [0.0, 0.5, 1.0])]
-VACP_DEFAULT = dict(method="pi", normalized=True, sigma_floor_q=0.10)
+PROPOSED_DEFAULT = dict(method="pi", normalized=True, sigma_floor_q=0.10)
 
 
 class Stream:

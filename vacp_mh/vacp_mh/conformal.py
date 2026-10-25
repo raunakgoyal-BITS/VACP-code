@@ -22,7 +22,7 @@ Controllers
            sliding window of scores.
 * "qt"   : quantile tracking (P-control on the radius, Angelopoulos et al., 2023).
 * "pi"   : quantile tracking + a bounded (anti-windup) integral term.  This is the
-           controller used by VACP-MH.
+           controller used by the proposed method.
 
 eta and ki are relative to the warm-start radius q0 (step = eta*q0 per unit error), so the
 same values mean the same thing for plain and normalised scores and for every dataset.

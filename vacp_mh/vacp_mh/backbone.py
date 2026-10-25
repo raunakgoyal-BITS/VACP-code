@@ -1,7 +1,7 @@
-"""Backbone training for VACP-MH and its learned baselines/ablations (torch).
+"""Backbone training for the proposed method and its learned baselines/ablations (torch).
 
 One LSTM encoder, per-horizon heads.  Supported objectives:
-  * "student_t" : location m and log-scale for a Student-t likelihood (VACP-MH default)
+  * "student_t" : location m and log-scale for a Student-t likelihood (default of the proposed method)
   * "gaussian"  : the same with a Gaussian likelihood (ablation)
   * "pinball"   : direct quantile regression (QR-LSTM baseline and CQR)
 
